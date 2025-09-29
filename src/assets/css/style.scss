@@ -1,3 +1,27 @@
-body{
-    
+@use 'components/variables' as *;
+@use 'components/mixins' as *;
+
+
+a{
+    text-decoration: none;
 }
+
+%btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 10px;
+    background-color: $red;
+    color: white;
+}
+
+.btn-white{
+    @extend %btn;
+    @include test($red);
+    background-color: white;
+}
+
+.color-v{
+    color: purple;
+}
+
+@include row();

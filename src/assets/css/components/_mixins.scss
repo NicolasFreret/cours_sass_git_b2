@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+@mixin test($color:black){
+    color: $color;
+}
+
+
+@mixin row($display:grid){
+    .row{
+        display: grid;
+        grid-template-columns: repeat(1fr,12);
+        gap:20px;
+    }
+}
