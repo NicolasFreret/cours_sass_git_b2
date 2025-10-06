@@ -1,14 +1,37 @@
 @use 'variables' as *;
+@use 'sass:map' as *;
 
-@mixin test($color:black){
-    color: $color;
+
+@mixin mq($breakpoint){
+    $value: get($mq, $breakpoint);
+    @if($value){
+        @media screen and (max-width: $value) {
+            @content;
+        }
+
+    }@else{
+        @warn 'Ce breakpoint #{$breakpoint} nexiste pas...';
+    }
+
+
+}
+
+
+@mixin col-gen($bp:'-'){
+
+    @for $i from 1 to 13{
+        .col#{$bp}#{$i}{
+            grid-column: span $i;
+        }
+    }
+
 }
 
 
 @mixin row($display:grid){
     .row{
         display: grid;
-        grid-template-columns: repeat(1fr,12);
+        grid-template-columns: repeat(12,1fr);
         gap:20px;
     }
 }

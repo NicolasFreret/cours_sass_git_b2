@@ -1,2 +1,13 @@
 $red: red;
 $green: green;
+$animals: 
+    cat red,
+    dog blue,
+    fish purple;
+
+$mq:(
+    'md': 1350px,
+    'sm': 1050px,
+    'xs': 750px,
+    'xxs':550px
+);

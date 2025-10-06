@@ -7,7 +7,7 @@ a{
 }
 
 %btn{
-    display: inline-block;
+    display: flex;
     width: fit-content;
     padding: 10px;
     background-color: $red;
@@ -16,7 +16,6 @@ a{
 
 .btn-white{
     @extend %btn;
-    @include test($red);
     background-color: white;
 }
 
@@ -25,3 +24,63 @@ a{
 }
 
 @include row();
+@include col-gen();
+
+
+// .delay-1{
+//     transition-delay: .1s;
+// }
+
+
+
+
+@each $animal, $color in $animals{
+    .#{$animal}{
+        color: $color;
+    }
+}
+
+
+
+@for $i from 1 to 11{
+    .delay-#{$i}{
+        transition-delay: $i * 0.1s;
+    }
+}
+
+
+@include mq(md){
+    @include col-gen('-md-');
+}
+
+@include mq(sm){
+    @include col-gen('-sm-');
+ 
+
+}
+
+@include mq(xs){
+    @include col-gen('-xs-');
+}
+
+@include mq(xxs){
+
+ [class*='col-']{
+    grid-column: span 12!important;
+ }
+
+}
+
+
+
+
+
+
+
+
+@include mq(xs){
+    .test{
+        color:red;
+    }
+    
+}
