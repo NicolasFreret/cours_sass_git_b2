@@ -28,10 +28,3 @@
 }
 
 
-@mixin row($display:grid){
-    .row{
-        display: grid;
-        grid-template-columns: repeat(12,1fr);
-        gap:20px;
-    }
-}

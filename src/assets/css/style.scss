@@ -1,69 +1,100 @@
 @use 'components/variables' as *;
 @use 'components/mixins' as *;
+@use 'components/header';
+
+
+*,::after,::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+ --pink:#EF6467;
+ --base-px:10px;
+}
+
+html{
+    font-size: var(--base-px);
+}
+
+body{
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1.7rem;
+    line-height: 2.7rem;
+    font-weight: 400;
+}
+
+img,
+video{
+    width: 100%;
+    height: 100%;
+}
 
 
 a{
     text-decoration: none;
 }
 
-%btn{
-    display: flex;
-    width: fit-content;
-    padding: 10px;
-    background-color: $red;
-    color: white;
+section{
+    position: relative;
+    padding: 3%;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
-.btn-white{
-    @extend %btn;
-    background-color: white;
+
+.container{
+    width: 1300px;
+    margin-inline:auto;
 }
 
-.color-v{
-    color: purple;
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap:20px;
 }
 
-@include row();
+
 @include col-gen();
 
 
-// .delay-1{
-//     transition-delay: .1s;
-// }
 
 
 
-
-@each $animal, $color in $animals{
-    .#{$animal}{
-        color: $color;
-    }
-}
-
-
-
-@for $i from 1 to 11{
-    .delay-#{$i}{
-        transition-delay: $i * 0.1s;
-    }
-}
 
 
 @include mq(md){
+
+    .container{
+        width: 1000px;
+    }
+
     @include col-gen('-md-');
 }
 
 @include mq(sm){
+    .container{
+        width: 700px;
+    }
     @include col-gen('-sm-');
  
 
 }
 
 @include mq(xs){
+    .container{
+        width: 600px;
+    }
     @include col-gen('-xs-');
 }
 
 @include mq(xxs){
+
+    .container{
+        width: 90%;
+    }
 
  [class*='col-']{
     grid-column: span 12!important;
