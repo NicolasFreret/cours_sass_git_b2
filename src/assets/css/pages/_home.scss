@@ -1,0 +1,45 @@
+@keyframes underline{
+    from{
+        width: 0%;
+    }
+    to{
+        width:100%;
+    }
+}
+
+
+.hero{
+
+    text-align: center;
+    margin-top: 8rem;
+
+    .h1{
+        margin-bottom: 5rem!important;
+        span{
+            position: relative;
+
+            &::after{
+                content:'';
+                position: absolute;
+                animation: underline .5s ease 1s forwards;
+                height: 13px;
+                bottom:0;
+                left:0;
+                z-index: -1;
+                opacity: .5;
+                background-color: var(--pink);
+                transition: height .5s ease;
+                will-change: height;
+            }
+
+            &:hover::after{
+                height: 100%;
+            }
+        }
+
+
+    }
+
+
+
+}
