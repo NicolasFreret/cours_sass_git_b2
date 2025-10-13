@@ -1,6 +1,8 @@
 @use 'components/variables' as *;
 @use 'components/mixins' as *;
+@use 'components/icons';
 @use 'components/header';
+
 
 
 *,::after,::before{
@@ -9,8 +11,19 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins.woff2');
+    display: swap;
+}
+
 :root{
  --pink:#EF6467;
+ --black:#333333;
+ --purple:#543864;
+ --white:#fff;
+
+
  --base-px:10px;
 }
 
@@ -34,6 +47,7 @@ video{
 
 a{
     text-decoration: none;
+    // font-family: 'poppins';
 }
 
 section{

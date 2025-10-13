@@ -1,6 +1,49 @@
-header{
+@use 'mixins' as *;
 
-    background-color: var(--pink);
+
+header{
+    padding: 2rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo{
+        width: 90px;
+    }
+
+    a{
+        color:var(--black);
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        font-weight: 500;
+        transition: color .5s ease, opacity .5s ease;
+        will-change: color, opacity;
+        opacity: 1;
+        padding-inline: 1rem;
+
+        &:hover{
+            color:var(--pink);
+        }
+    }
+
+   
+
+
+    nav{
+        display: flex;
+
+        &:hover a:not(:hover){
+            opacity: .5;
+        }
+        
+    }
+}
+
+
+@include mq(sm){
+
+
+
 
 
 
