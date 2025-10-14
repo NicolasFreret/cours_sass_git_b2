@@ -1,48 +1,45 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-   <header>
-      <div class="logo">
-        <a aria-label="Lien vers la home" href="">
-          <img src="src/assets/img/Logo-Hello-Caen.svg" alt="Logo Hello Caen">
-        </a>
-      </div>
-      <nav>
-        <a href="">Carte</a>
-        <a href="">Festival</a>
-        <a href="">Collab'</a>
-        <a href="">Blog</a>
-        <a href="">A propos</a>
-        <a href="">Contact</a>
-        <a aria-label="Lien de recherche" href="#">
-          <span class="icon-magnifier"></span>
-        </a>
-      </nav>
-      <a href="#" class="hbg">
-        <span></span>
-        <span></span>
-      </a>
-   </header>
+<%- include('components/header.html', {title:'Accueil'})%>
    <main>
+     
       <section class="hero">
         <div class="container content">
           <h1 class="h1">
             Le média <br>
             <span>
-              préféré des Caennais·es !
-            </span>
+              préféré des Caennais·es
+            </span> !
           </h1>
           <p>
-            Rejoins le média <b>numéro 1 de la ville de Caen</b>, avec déjà plus de 220 000 followers 
+            Rejoins le média <b>numéro 1 de la ville de Caen</b>, avec déjà plus de 220 000 followers 👇 
           </p>
           <div class="socials">
-            Smùfmkd!fkdkùl
+           <a  aria-label="Lien vers linkedin" href="">
+              <span class="icon-linkedin"></span>
+           </a>
+           <a  aria-label="Lien vers linkedin" href="">
+              <span class="icon-linkedin"></span>
+           </a>
+           <a  aria-label="Lien vers linkedin" href="">
+              <span class="icon-linkedin"></span>
+           </a>
+           <a  aria-label="Lien vers linkedin" href="">
+              <span class="icon-linkedin"></span>
+           </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="discount">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nemo, exercitationem cum ad corporis aliquid repellat nam animi dolores aliquam ratione repellendus commodi esse mollitia impedit quidem! Repellendus, explicabo enim!
+              </div>
+            </div>
+            <div class="col-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nemo, exercitationem cum ad corporis aliquid repellat nam animi dolores aliquam ratione repellendus commodi esse mollitia impedit quidem! Repellendus, explicabo enim!
+            </div>
           </div>
         </div>
       </section>

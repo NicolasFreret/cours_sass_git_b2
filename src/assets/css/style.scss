@@ -1,8 +1,10 @@
+@use 'sass:map' as *;
 @use 'components/variables' as *;
-@use 'components/mixins' as *;
+@use 'components/mixins' as m;
 @use 'components/icons';
 @use 'components/header';
 @use 'pages/home';
+
 
 
 
@@ -22,9 +24,11 @@
 :root{
  --pink:#EF6467;
  --black:#333333;
- --purple2:#543864;
+ --light-pink:#FDF0EE;
  --purple:#543864;
  --white:#fff;
+
+ --linkedin-blue:#1984BC;
 
 
  --base-px:10px;
@@ -65,13 +69,13 @@ section{
     font-size: 8rem;
     line-height: 8rem;
     font-weight: 600;
-    color: var(--purple2);
+    color: var(--purple);
 }
 
 
 .container{
-    width: 1300px;
-    margin-inline:auto;
+    width: get($mq, 'md') - 50px;
+    margin-inline: auto;
 }
 
 .content > *:not(:last-child){
@@ -86,40 +90,83 @@ section{
 }
 
 
-@include col-gen();
+.fixed_socials {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    bottom: 0px;
+    margin-block: auto;
+    height: fit-content;
+    right: 30px;
+
+    p{
+        writing-mode:sideways-lr;
+        position: relative;
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        &::before{
+            content:'';
+            margin-left: 2px;
+            position: absolute;
+            display: block;
+            top:0;
+            height: 20px;
+            width: 2px;
+            background-color: var(--black);
+        }
+
+    }
+
+    .socials{
+        display: flex;
+        flex-flow: column;
+        align-items: end;
+    }
+
+    
+}
+
+@include m.col-gen();
 
 
 
 
 
 
+@include m.mq(md){
 
-@include mq(md){
+    @include m.col-gen('-md-');
 
     .container{
         width: 1000px;
     }
 
-    @include col-gen('-md-');
+    
 }
 
-@include mq(sm){
+@include m.mq(sm){
+    @include m.col-gen('-sm-');
+    
     .container{
         width: 700px;
     }
-    @include col-gen('-sm-');
- 
 
 }
 
-@include mq(xs){
+@include m.mq(xs){
     .container{
-        width: 600px;
+        width: 500px;
     }
-    @include col-gen('-xs-');
+
+    .fixed_socials {
+        display: none;
+    }
+
+    @include m.col-gen('-xs-');
 }
 
-@include mq(xxs){
+@include m.mq(xxs){
 
     .container{
         width: 90%;
@@ -134,13 +181,3 @@ section{
 
 
 
-
-
-
-
-@include mq(xs){
-    .test{
-        color:red;
-    }
-    
-}

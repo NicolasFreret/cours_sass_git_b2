@@ -2,19 +2,32 @@
 @use 'sass:map' as *;
 
 
+// @mixin mq($breakpoint){
+//     $value: get($mq, $breakpoint);
+//     @if($value){
+//         @media screen and (max-width: $value) {
+//             @content;
+//         }
+
+//     }@else{
+//         @warn 'Ce breakpoint #{$breakpoint} nexiste pas...';
+//     }
+
+
+// }
+
+
 @mixin mq($breakpoint){
     $value: get($mq, $breakpoint);
     @if($value){
-        @media screen and (max-width: $value) {
+        @media screen and (max-width:$value) {
             @content;
         }
-
     }@else{
-        @warn 'Ce breakpoint #{$breakpoint} nexiste pas...';
+        @warn "Breakpoint #{$breakpoint} doesn's exist...";
     }
-
-
 }
+
 
 
 @mixin col-gen($bp:'-'){

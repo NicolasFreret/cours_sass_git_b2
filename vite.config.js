@@ -10,7 +10,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'index.html')
+        index: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about.html')
+
+
       },
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
@@ -49,7 +52,11 @@ export default defineConfig({
           ]
         }),
         mqpacker({
-          sort: true
+          sort: (a, b) => {
+            const numA = parseInt(a.match(/\d+/));
+            const numB = parseInt(b.match(/\d+/));
+            return numB - numA; // du plus grand au plus petit
+          }
         })
         
       ]
