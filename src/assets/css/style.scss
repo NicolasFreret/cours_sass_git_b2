@@ -1,6 +1,7 @@
 @use 'sass:map' as *;
 @use 'components/variables' as *;
 @use 'components/mixins' as m;
+@use 'components/button';
 @use 'components/icons';
 @use 'components/header';
 @use 'pages/home';
@@ -14,6 +15,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 
 @font-face {
     font-family: 'poppins';
@@ -32,7 +34,14 @@
 
 
  --base-px:10px;
+ --gap-content:2rem;
 }
+
+::selection{
+    background-color: var(--pink);
+    color: var(--white);
+}
+
 
 html{
     font-size: var(--base-px);
@@ -64,12 +73,29 @@ section{
     contain-intrinsic-size: auto 600px;
 }
 
-.h1{
+.h1,
+.h2{
     font-family: 'Poppins', sans-serif;
+    color: var(--purple);
+    font-weight: 600;
+}
+
+.h1{
     font-size: 8rem;
     line-height: 8rem;
-    font-weight: 600;
-    color: var(--purple);
+}
+
+.h2{
+    font-size: 3.3rem;
+    line-height: 3.7rem;
+}
+
+.highlight{
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    color: var(--pink);
+    text-transform: uppercase;
 }
 
 
@@ -79,8 +105,10 @@ section{
 }
 
 .content > *:not(:last-child){
-    margin-bottom: 2rem;
+    margin-bottom: var(--gap-content);
 }
+
+
 
 
 .row{
