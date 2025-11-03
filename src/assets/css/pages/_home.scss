@@ -89,11 +89,16 @@
     }
 
     figure{
-        width: 350px;
+        width: min(350px, 100%);
         height: 100%;
         border-radius: 10px;
         overflow: hidden;
         margin-inline: auto;
+    }
+
+    .btn.transparent{
+        position: relative;
+        right: 15px;
     }
 
 }
@@ -133,6 +138,27 @@
 
         }
     }
+
+    .discount{
+        text-align: center;
+
+        .h2{
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+
+        .content{
+            padding: 3rem;
+        }
+
+        .btn{
+            margin-inline: auto;
+
+            .transparent{
+                right: 0;
+            }
+        }
+    }
 }
 
 
@@ -144,6 +170,20 @@
             
 
         }
+    }
+
+    .discount{
+        text-align: center;
+
+        .h2{
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+
+        .content{
+            padding:1.5rem;
+        }
+
     }
 }
 

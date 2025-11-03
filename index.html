@@ -32,7 +32,7 @@
       <section class="discount">
         <div class="container">
           <div class="row">
-            <div class="col-6">
+            <div class="col-6 col-sm-12">
               <div class="content">
                 <p class="highlight">
                   Maintenant en version digitale
@@ -43,10 +43,13 @@
                 <p>
                   Pour <b>seulement 12€</b>, rejoins une communauté grandissante (+ de 3 000 cartes créées) et profite toute l’année de <b>remises</b> chez de nombreux <b>partenaires locaux</b>.
                 </p>
-               <%- include ('components/button.html',{text:'Je crée ma carte', icon:'hand'})%>
+               <div class="btn_box">
+                <%- include ('components/button.html',{text:'Je crée ma carte', icon:'hand', classe:''})%>
+               <%- include ('components/button.html',{text:'Découvre les partenaires', icon:'arrow', classe:'transparent'})%>
+               </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-sm-12">
               <figure>
                 <img src="/src/assets/img/Carte-Hello-Caen-2025-1024x1365.webp" alt="">
               </figure>

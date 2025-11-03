@@ -1,4 +1,27 @@
+@keyframes icon-animation {
+
+    0%{
+        left:0px;
+        opacity: 1;
+    }
+    50%{
+        left:20px;
+        opacity: 0;
+    }
+    51%{
+        left:-20px;
+        opacity: 0;
+    }
+    100%{
+        left:0;
+        opacity: 1;
+    }
+    
+}
+
 .btn{
+ 
+
     font-family: 'Poppins', sans-serif;
     background-color: var(--pink);
     color: var(--white);
@@ -11,4 +34,22 @@
     align-items: center;
     width: fit-content;
     gap:.5rem;
+
+    &:hover span{
+        position: relative;
+        animation: icon-animation .3s ease;
+    }
+
+
+    &.transparent{
+        background-color: transparent;
+        color: var(--pink);
+
+        span{
+            background-color: var(--pink);
+        }
+    }
+
+
 }
+
