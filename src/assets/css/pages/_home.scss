@@ -68,12 +68,12 @@
 
 
 .discount{
-
     color:var(--purple);
     font-size: 1.6rem;
     line-height: 2.6rem;
    
     .container{
+        border-radius: 10px;
          background-color: var(--light-pink);
          padding: 3rem;
     }
@@ -145,6 +145,10 @@
         .h2{
             font-size: 3rem;
             line-height: 3rem;
+        }
+
+        .container{
+        padding: 1rem;
         }
 
         .content{
